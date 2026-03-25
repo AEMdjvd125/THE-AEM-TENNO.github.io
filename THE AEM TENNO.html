@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warframe 氏族工具中心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        /* 星际战甲 科技主题色 */
+        :root {
+            --wf-main: #0df2e1;
+            --wf-dark: #0a101f;
+            --wf-light: #121a2f;
+            --wf-accent: #772ce8;
+            --text: #e6f1ff;
+        }
+
+        body {
+            background: var(--wf-dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        header {
+            background: rgba(10, 16, 31, 0.9);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--wf-main);
+            z-index: 999;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--wf-main);
+        }
+
+        nav a {
+            color: white;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--wf-main);
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1300px;
+            margin: 120px auto 50px;
+            padding: 0 5%;
+        }
+
+        /* 氏族横幅 */
+        .banner {
+            background: linear-gradient(to right, #121a2f, #0a101f);
+            border-left: 4px solid var(--wf-main);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .banner h1 {
+            color: var(--wf-main);
+            margin-bottom: 10px;
+        }
+
+        /* 工具网格 */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        /* 工具卡片 */
+        .tool-card {
+            background: var(--wf-light);
+            border-radius: 10px;
+            padding: 1.8rem;
+            border: 1px solid #203055;
+            transition: 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--wf-main);
+            box-shadow: 0 0 15px rgba(13,242,225,0.2);
+        }
+
+        .tool-card h3 {
+            color: var(--wf-main);
+            margin-bottom: 0.8rem;
+        }
+
+        /* 板块标题 */
+        .section-title {
+            font-size: 1.8rem;
+            color: white;
+            margin: 4rem 0 1.5rem;
+            border-left: 4px solid var(--wf-accent);
+            padding-left: 12px;
+        }
+
+        /* 氏族信息 */
+        .clan-info {
+            background: var(--wf-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            color: #8899b3;
+            border-top: 1px solid #203055;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 导航 -->
+    <header>
+        <div class="logo">【氏族名称】工具中心</div>
+        <nav>
+            <a href="#home">首页</a>
+            <a href="#tools">工具大全</a>
+            <a href="#clan">氏族信息</a>
+            <a href="#join">加入我们</a>
+        </nav>
+    </header>
+
+    <!-- 主内容 -->
+    <div class="container" id="home">
+        <!-- 氏族横幅 -->
+        <div class="banner">
+            <h1>Warframe 氏族 · 全能工具站</h1>
+            <p>集成全网所有免费 Warframe 工具 | 无广告 | 免登录 | 全开放</p>
+            <p style="margin-top:8px; color:#a9c3e3;">族长：________ | 欢迎所有 Tenno 访问使用</p>
+        </div>
+
+        <!-- 工具大全 -->
+        <h2 class="section-title" id="tools">🌌 Warframe 全能工具集</h2>
+        <div class="tools-grid">
+            <a href="https://warframe.fandom.com/" target="_blank" class="tool-card">
+                <h3>中文维基</h3>
+                <p>Warframe 最完整资料站、掉落、攻略、数据库</p>
+            </a>
+            <a href="https://semlar.com/" target="_blank" class="tool-card">
+                <h3>Semlar 配装</h3>
+                <p>战甲/武器/宠物 最强配装模拟器</p>
+            </a>
+            <a href="https://warframe.market/" target="_blank" class="tool-card">
+                <h3>Warframe Market</h3>
+                <p>官方认可交易平台，查价、出售、收购</p>
+            </a>
+            <a href="https://deathsnacks.com/warframe/" target="_blank" class="tool-card">
+                <h3>实时警报/活动</h3>
+                <p>全服实时警报、突击、虚空裂缝、活动日历</p>
+            </a>
+            <a href="https://r-warframe.github.io/riven/" target="_blank" class="tool-card">
+                <h3>紫卡估价工具</h3>
+                <p>紫卡属性、价值、排行查询</p>
+            </a>
+            <a href="https://overframe.gg/" target="_blank" class="tool-card">
+                <h3>Overframe 配装</h3>
+                <p>热门玩家配装，一键参考</p>
+            </a>
+            <a target="_blank" class="tool-card">
+                <h3>服务器状态（暂不可用）</h3>
+                <p>实时查看 WF 服务器是否在线</p>
+            </a>
+            <a target="_blank" class="tool-card">
+                <h3>国服/WEGAME 工具（暂不可用）</h3>
+                <p>掉落、遗物、材料、任务速查</p>
+            </a>
+            <a target="_blank" class="tool-card">
+                <h3>虚空商人（暂不可用）</h3>
+                <p>商人抵达时间、售卖物品提前预览</p>
+            </a>
+            <a href="https://trials.gg/warframe/baro" target="_blank" class="tool-card">
+                <h3>Baro 追踪</h3>
+                <p>虚空商人全平台时间追踪</p>
+            </a>
+            <a href="https://relicradium.com/" target="_blank" class="tool-card">
+                <h3>遗物掉落查询</h3>
+                <p>所有遗物、奖励、出处一键查询</p>
+            </a>
+            <a href="https://1000iq.com/warframe/" target="_blank" class="tool-card">
+                <h3>枢纽/任务工具</h3>
+                <p>突击、仲裁、执刑官、夜灵</p>
+            </a>
+        </div>
+
+        <!-- 氏族信息 -->
+        <h2 class="section-title" id="clan">🏠 氏族信息</h2>
+        <div class="clan-info">
+            <h3 style="color:var(--wf-main); margin-bottom:1rem;">氏族名称：________</h3>
+            <p><strong>族长：</strong>________</p>
+            <p><strong>氏族类型：</strong>休闲 / 研究 / 任务 / 国际服 / 国服</p>
+            <p><strong>氏族规模：</strong>________</p>
+            <p><strong>氏族宗旨：</strong>自由、互助、无强制、无压力</p>
+            <p><strong>科研：</strong>全科研已完成 / 正在研究</p>
+            <br>
+            <p style="color:#a9c3e3;">本网站为氏族公共工具站，所有 Tenno 均可免费使用！</p>
+        </div>
+
+        <!-- 加入我们 -->
+        <h2 class="section-title" id="join">🤝 加入我们的氏族</h2>
+        <div class="clan-info">
+            <p>✅ 无段位要求</p>
+            <p>✅ 无活跃度强制</p>
+            <p>✅ 免费使用所有工具</p>
+            <p>✅ 氏族群：________</p>
+            <p>✅ 直接游戏内搜索氏族名申请即可</p>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        Warframe 氏族工具站 &copy; 2026 | 非官方 | 免费开源 | 欢迎所有 Tenno
+    </footer>
+
+</body>
+</html>
